@@ -5,17 +5,11 @@ var fs = require('fs');
 // Require minimist module (make sure you install this one via npm).
 var minimist = require('minimist');
 // Use minimist to process one argument `--port=` on the command line after `node server.js`.
-var args = minimist(process.argv.slice(2),{
-    int: 'port'
-})
+var args = minimist(process.argv.slice(2));
 // Define a const `port` using the argument from the command line. 
 // Make this const default to port 3000 if there is no argument given for `--port`.
-tempPort = 3000;
-const hostname = '127.0.0.1'
-if (args.port != true){
-    tempPort = args.port;
-}
-const port = tempPort;
+const port = args.port || 3000;
+
 // Use the fs module to create an arrow function using `fs.readFile`.
 
 // Use the documentation for the Node.js `fs` module. 
@@ -53,7 +47,7 @@ const server = http.createServer((req,response) => {
 
 // Start the `server` const listening on the port defined by argument in your `port` const. 
 // Put the exact message `Server listening on port ${port}` on the console log. 
-server.listen(port, hostname, () => {
+server.listen(port, () => {
 console.log('Server running on port ${port}');
 });
 

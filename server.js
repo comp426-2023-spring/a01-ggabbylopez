@@ -12,8 +12,8 @@ var args = minimist(process.argv.slice(2),{
 // Make this const default to port 3000 if there is no argument given for `--port`.
 tempPort = 3000;
 const hostname = '127.0.0.1';
-if (!args.port){
-    tempPort =  args.port;
+if (args.port != True){
+    tempPort = args.port;
 }
 const port = tempPort;
 // Use the fs module to create an arrow function using `fs.readFile`.
@@ -54,7 +54,7 @@ const server = http.createServer((req,response) => {
 // Start the `server` const listening on the port defined by argument in your `port` const. 
 // Put the exact message `Server listening on port ${port}` on the console log. 
 server.listen(port, hostname, () => {
-console.log('Server listening on port ${port}')
+console.log('Server running on port ${port}');
 });
 
 });

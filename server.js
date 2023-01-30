@@ -8,7 +8,7 @@ var minimist = require('minimist');
 var args = minimist(process.argv.slice(2));
 // Define a const `port` using the argument from the command line. 
 // Make this const default to port 3000 if there is no argument given for `--port`.
-const port = args.port || 3000;
+const port = args.port || 3000
 
 // Use the fs module to create an arrow function using `fs.readFile`.
 
@@ -19,7 +19,7 @@ const port = args.port || 3000;
 
 // If there is an error, put it on the console error and return. 
 // Do not be nice about exiting.
-fs.readFile("./public/index.html", 'utf8', (err,data) => {
+fs.readFile('./public/index.html', 'utf8', (err,data) => {
     if (err){
         console.log(err);
         return;

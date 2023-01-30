@@ -12,7 +12,7 @@ var args = minimist(process.argv.slice(2),{
 // Make this const default to port 3000 if there is no argument given for `--port`.
 tempPort = 3000;
 const hostname = '127.0.0.1';
-if (args.port != True){
+if (args.port != true){
     tempPort = args.port;
 }
 const port = tempPort;
